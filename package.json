@@ -1,0 +1,69 @@
+{
+  "name": "bff-egg-web",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "egg": {
+    "typescript": true,
+    "declarations": true
+  },
+  "bffConfig": {
+    "defaultAppName": "index",
+    "polyfills": false,
+    "cdnHosts": ""
+  },
+  "scripts": {
+    "dev": "npm run stop && (npm run dev:client & npm run dev:server)",
+    "dev:server": "egg-bin dev --port 8080 --title=egg-server-$npm_package_name",
+    "dev:client": "webpack-dev-server --config ./build/webpack.dev.ts --progress --fix --title=wds-$npm_package_name",
+    "build": "webpack --config ./build/webpack.prod.js --fix",
+    "start": "egg-scripts start --port 8080 --daemon --title=egg-server-$npm_package_name",
+    "stop": "egg-scripts stop --title=egg-server-$npm_package_name",
+    "debug": "egg-bin debug",
+    "tsc": "ets && tsc -p tsconfig.json",
+    "lint": "eslint . --ext .ts",
+    "clean": "ets clean"
+  },
+  "dependencies": {
+    "egg": "^2.6.1",
+    "egg-cors": "^2.2.3",
+    "egg-scripts": "^2.6.0",
+    "egg-view-nunjucks": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.40",
+    "@types/node": "^7.0.12",
+    "@types/supertest": "^2.0.0",
+    "@types/webpack": "^4.41.26",
+    "@types/webpack-dev-server": "^3.11.1",
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.16.0",
+    "eslint": "^6.7.2",
+    "eslint-config-egg": "^8.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "tslib": "^1.9.0",
+    "typescript": "^3.0.0",
+    "vconsole-webpack-plugin": "^1.5.2",
+    "webpack": "^5.15.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "eslintIgnore": [
+    "coverage"
+  ],
+  "author": "vadxq",
+  "license": "MIT"
+}
