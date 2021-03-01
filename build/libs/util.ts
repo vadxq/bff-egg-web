@@ -1,7 +1,7 @@
 const pkg = require("../../package.json");
 
 // 获取项目名字
-export const getAppNames = (appConfigs) => {
+export const getAppNames = (appConfigs: Array<any>) => {
   console.log('build util appconfigs');
   return appConfigs.map(app => {
     return app.name;
@@ -18,3 +18,12 @@ export const getPublicPath = () => {
       return '/';
   }
 };
+
+// 获取webpack入口文件
+export const getEntry = (appConfigs: Array<any>) => {
+  const entry = {};
+  appConfigs.forEach(app => {
+    entry[app.name] = app.entryFile;
+  });
+  return entry;
+}
