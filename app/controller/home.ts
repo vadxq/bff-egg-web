@@ -25,6 +25,7 @@ export default class HomeController extends Controller {
 
     if (htmlPath === undefined) {
       tplFile = `${appName}/index.html`;
+      console.log(this.config.view.root[0]);
       const tplFilePath = path.join(this.config.view.root[0] || '', tplFile);
       console.debug('tplFilePath=', this.config.view.root);
       console.debug('tplFilePath=', tplFilePath);

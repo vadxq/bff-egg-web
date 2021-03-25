@@ -1,5 +1,5 @@
-import * as VConsolePlugin from 'vconsole-webpack-plugin';
-import * as OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import VConsolePlugin from 'vconsole-webpack-plugin';
+import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import { merge } from 'webpack-merge';
 
 import baseConfig from './webpack.base';
