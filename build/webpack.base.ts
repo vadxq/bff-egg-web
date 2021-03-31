@@ -18,6 +18,11 @@ const config: webpack.Configuration = {
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: '/node_modules/'
+      },
       // LESS & CSS
       {
         test: /\.css|\.less$/,
@@ -35,11 +40,6 @@ const config: webpack.Configuration = {
           },
           {
             loader: 'less-loader',
-            options: {
-              sourceMap: true,
-              strictMath: true,
-              noIeCompat: true
-            }
           }
         ]
       },
@@ -61,9 +61,16 @@ const config: webpack.Configuration = {
     }),
 
   ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "../client/apps")
+    },
+    extensions: ['.ts', '.tsx'],
+  },
   stats: {
     entrypoints: false,
-    children: false
+    children: false,
+    errorDetails: true
   },
   optimization: {
     runtimeChunk: {

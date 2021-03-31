@@ -25,10 +25,14 @@
     "clean": "ets clean"
   },
   "dependencies": {
+    "@ant-design/mobile": "^3.0.0-alpha.8",
     "egg": "^2.6.1",
     "egg-cors": "^2.2.3",
     "egg-scripts": "^2.6.0",
-    "egg-view-nunjucks": "^2.2.0"
+    "egg-view-nunjucks": "^2.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.40",
@@ -45,13 +49,16 @@
     "egg-mock": "^3.16.0",
     "eslint": "^6.7.2",
     "eslint-config-egg": "^8.0.0",
+    "eslint-loader": "^4.0.2",
     "html-webpack-plugin": "^5.3.1",
+    "less": "^4.1.1",
     "less-loader": "^8.0.0",
     "mini-css-extract-plugin": "^1.3.9",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss": "^8.2.8",
     "postcss-loader": "^5.2.0",
     "style-loader": "^2.0.0",
+    "ts-loader": "^8.1.0",
     "tslib": "^1.9.0",
     "typescript": "^3.0.0",
     "vconsole-webpack-plugin": "^1.5.2",
