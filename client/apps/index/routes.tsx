@@ -1,8 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
 
-import Loading from '../../components/Loading';
-// import History from './utils/history';
+import Loading from '@components/Loading';
 import Notfound from './pages/notFound';
 
 const ROUTE_CONFIG = [
@@ -20,7 +19,7 @@ export const getRoutes = () => {
   });
 
   return (
-    <Router history={History}>
+    <Router>
       <Suspense fallback={<Loading />}>
         <Switch>
           {loadedRoutes}

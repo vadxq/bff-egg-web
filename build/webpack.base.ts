@@ -3,6 +3,7 @@ import * as webpack from 'webpack';
 import { DefinePlugin } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import processEnvPlugin from './libs/env'
 import appConfigs from './libs/pages';
 import { getEntry, getPublicPath } from './libs/util';
@@ -62,10 +63,12 @@ const config: webpack.Configuration = {
 
   ],
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "../client/apps")
-    },
     extensions: ['.ts', '.tsx'],
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: path.resolve(__dirname, '../tsconfig.json')
+      })
+    ]
   },
   stats: {
     entrypoints: false,

@@ -5,7 +5,7 @@ import { getRoutes } from './routes';
 import './index.less';
 
 const App = () => (
-  <div className="wrap wrap-test">{getRoutes()}</div>
+  <div>{getRoutes()}</div>
 );
 
 ReactDom.render(<App />, document.querySelector('#root'));

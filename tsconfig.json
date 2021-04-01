@@ -23,7 +23,13 @@
     "importHelpers": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "@styles/*": ["client/styles/*"],
+      "@components/*": ["client/components/*"],
+      "@utils/*": ["client/utils/*"]
+    }
   },
   "exclude": [
     "app/public",
